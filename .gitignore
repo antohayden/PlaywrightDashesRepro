@@ -1,0 +1,37 @@
+# Build and debug output
+bin/
+obj/
+TestResults/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / VSCode
+.vscode/
+*.code-workspace
+.vs/
+
+
+# Playwright downloads
+playwright/.cache/
+.playwright/
+
+# Logs
+*.log
+
+# Rider / JetBrains IDEs
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+
+# Others
+*.orig
