@@ -10,12 +10,15 @@ namespace PlaywrightMarkdownIssueRepro
     public class MarkdownRenderingIssueTest : PageTest
     {
         [Test]
-        public async Task Test_Timeout_With_HTML_And_Dashes()
+        public async Task TestToDemoDashesIssue()
         {
-            await Page.GotoAsync("https://example.com");
+            await Page.GotoAsync("https://www.thetimes.com/");
+
+            // wait for the cookie banner to appear
+            await Expect(Page.Locator("css=div[id*='sp_message_container']")).ToBeVisibleAsync();
 
             // Intentionally cause a timeout that generates formatted call log
-            await Page.Locator("//button[text()='Sign In']").ClickAsync(new() { Timeout = 1000 });
+            await Page.Locator("css=div[id='main-container']").ClickAsync(new() { Timeout = 5000 });
         }
     }
 }
